@@ -1,6 +1,9 @@
 import 'package:bookly/core/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+
+import '../../../../Home/presention/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -19,29 +22,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    textAnimationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
+    initSlidingAnimation();
+    homeViewNavigate();
+  }
 
-    logoAnimationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-
-    textSlidingAnimation = Tween<Offset>(
-      begin: Offset(0, 3),
-      end: Offset.zero,
-    ).animate(textAnimationController);
-
-    logoSlidingAnimation = Tween<Offset>(
-      begin: Offset(0, -3),
-      end: Offset.zero,
-    ).animate(logoAnimationController);
-
-    logoAnimationController.forward();
-    Future.delayed(Duration(milliseconds: 500), () {
-      textAnimationController.forward();
+  void homeViewNavigate() {
+    Future.delayed(Duration(milliseconds: 2000), () {
+      Get.to(() => HomeView(), transition: Transition.fadeIn);
     });
   }
 
@@ -76,5 +63,30 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    textAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+
+    logoAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+
+    textSlidingAnimation = Tween<Offset>(
+      begin: Offset(0, 3),
+      end: Offset.zero,
+    ).animate(textAnimationController);
+
+    logoSlidingAnimation = Tween<Offset>(
+      begin: Offset(0, -3),
+      end: Offset.zero,
+    ).animate(logoAnimationController);
+
+    logoAnimationController.forward();
+    textAnimationController.forward();
   }
 }
