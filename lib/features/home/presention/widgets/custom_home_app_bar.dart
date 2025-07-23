@@ -8,23 +8,26 @@ class CustomHomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset(
-            AssetsData.logo,
-            height: 20,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              size: 24,
-              color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 32),
+      child: Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(
+              AssetsData.logo,
+              height: 20,
             ),
-          ),
-        ],
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                FontAwesomeIcons.magnifyingGlass,
+                size: 24,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
