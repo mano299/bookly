@@ -10,24 +10,22 @@ class CustomHomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 40, bottom: 30),
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SvgPicture.asset(
-              AssetsData.logo,
-              height: 20,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SvgPicture.asset(
+            AssetsData.logo,
+            height: 20,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 24,
+              color: Colors.white,
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                FontAwesomeIcons.magnifyingGlass,
-                size: 24,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
