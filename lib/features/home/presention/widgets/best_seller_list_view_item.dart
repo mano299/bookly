@@ -3,6 +3,7 @@ import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/styles.dart';
+import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -27,8 +28,8 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0),
+          SizedBox(width: 30),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,7 +54,9 @@ class BestSellerListViewItem extends StatelessWidget {
                       style: Styles.textStyle20.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
-                    )
+                    ),
+                    Spacer(),
+                    BookRating(),
                   ],
                 )
               ],
