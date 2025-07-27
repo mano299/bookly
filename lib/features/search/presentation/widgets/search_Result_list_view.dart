@@ -1,15 +1,15 @@
-import 'package:bookly/features/home/presention/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+import '../../../home/presentation/widgets/best_seller_list_view_item.dart';
+
+class SearchResultListView extends StatelessWidget {
+  const SearchResultListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      itemCount: 5,
+      itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),

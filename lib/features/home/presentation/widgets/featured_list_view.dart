@@ -1,13 +1,13 @@
-import 'package:bookly/features/home/presention/widgets/custom_book_item.dart';
+import 'package:bookly/features/home/presentation/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
-class SimilarListView extends StatelessWidget {
-  const SimilarListView({super.key});
+class FeaturedListView extends StatelessWidget {
+  const FeaturedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .3,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) => Padding(
