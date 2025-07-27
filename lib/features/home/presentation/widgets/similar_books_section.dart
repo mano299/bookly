@@ -11,10 +11,10 @@ class SimilarBooksSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-            'You can also like',
-            style: Styles.textStyle14.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
+          'You can also like',
+          style: Styles.textStyle14.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
         SizedBox(height: 16),
         SimilarListView(),

@@ -22,12 +22,10 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: TextButton(
-        
         style: TextButton.styleFrom(
-          
             backgroundColor: backgroundColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: borderRadius ?? BorderRadius.circular(16))),
+            shape: RoundedRectangleBorder(
+                borderRadius: borderRadius ?? BorderRadius.circular(16))),
         onPressed: () {},
         child: Text(
           text,

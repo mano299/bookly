@@ -43,8 +43,8 @@ class CustomBookListViewItem extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
                       "Harry Potter and the Globet of Fire",
-                      style:
-                          Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: kGTSectraFine),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
