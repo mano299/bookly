@@ -1,5 +1,6 @@
-import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+
+import 'custom_button.dart';
 
 class PriceAndPreview extends StatelessWidget {
   const PriceAndPreview({super.key});
@@ -7,46 +8,33 @@ class PriceAndPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      // children: [
-      //   Container(
-      //     height: 48,
-      //     width: 150,
-      //     decoration: BoxDecoration(
-      //       color: Colors.white,
-      //       borderRadius: BorderRadius.only(
-      //         topLeft: Radius.circular(16),
-      //         bottomLeft: Radius.circular(16),
-      //       ),
-      //     ),
-      //     child: Center(
-      //       child: Text(
-      //         '19.99 €',
-      //         style: Styles.textStyle18.copyWith(
-      //           color: Colors.black,
-      //           fontWeight: FontWeight.bold,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      //   Container(
-      //     height: 48,
-      //     width: 150,
-      //     decoration: BoxDecoration(
-      //       color: Color(0xffEF8262),
-      //       borderRadius: BorderRadius.only(
-      //         topRight: Radius.circular(16),
-      //         bottomRight: Radius.circular(16),
-      //       ),
-      //     ),
-      //     child: Center(
-      //       child: Text(
-      //         'Free Preview',
-      //         style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
-      //       ),
-      //     ),
-      //   ),
-      // ],
+      children: [
+        Expanded(
+          child: CustomButton(
+            text: '19.99€',
+            backgroundColor: Colors.white,
+            fontWeight: FontWeight.w900,
+            textColor: Colors.black,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              bottomLeft: Radius.circular(12),
+            ),
+          ),
+        ),
+        Expanded(
+          child: CustomButton(
+            text: 'Free Preview',
+            backgroundColor: Color(0xffEF8262),
+            fontWeight: FontWeight.w700,
+            textColor: Colors.white,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+            fontSize: 16,
+          ),
+        ),
+      ],
     );
   }
 }
