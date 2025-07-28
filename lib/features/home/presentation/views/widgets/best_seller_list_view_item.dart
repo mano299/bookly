@@ -4,7 +4,7 @@ import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/styles.dart';
+import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 
 class CustomBookListViewItem extends StatelessWidget {
