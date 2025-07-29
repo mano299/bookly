@@ -22,7 +22,7 @@ class CustomBookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookItem(
-                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail!),
+                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? 'https://media.istockphoto.com/id/2170879145/photo/close-up-of-man-writing-in-a-notebook-at-a-desk.jpg?s=2048x2048&w=is&k=20&c=M9BUhFRd1b2yNbW73t55vUr2usk1841Wk35HXA2DMZE='),
             SizedBox(width: 30),
             Expanded(
               child: Column(

@@ -29,10 +29,12 @@ class HomeViewBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Text(
                   'Newest Books',
-                  style: Styles.textStyle18,
+                  style: Styles.textStyle20.copyWith(
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
             ],
           ),
         ),
