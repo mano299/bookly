@@ -20,7 +20,7 @@ class FeaturedListView extends StatelessWidget {
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: CustomBookItem(
-                  imageUrl: state.books[index].volumeInfo!.imageLinks!.thumbnail ?? 'https://media.istockphoto.com/id/2170879145/photo/close-up-of-man-writing-in-a-notebook-at-a-desk.jpg?s=2048x2048&w=is&k=20&c=M9BUhFRd1b2yNbW73t55vUr2usk1841Wk35HXA2DMZE=',
+                  imageUrl: state.books[index].volumeInfo!.imageLinks!.thumbnail!,
                 ),
               ),
               scrollDirection: Axis.horizontal,
