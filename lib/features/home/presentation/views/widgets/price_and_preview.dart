@@ -11,7 +11,7 @@ class PriceAndPreview extends StatelessWidget {
       children: [
         Expanded(
           child: CustomButton(
-            text: '19.99€',
+            text: 'Free',
             backgroundColor: Colors.white,
             fontWeight: FontWeight.w900,
             textColor: Colors.black,

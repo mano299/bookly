@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -5,8 +6,8 @@ import 'book_rating.dart';
 import 'custom_book_item.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -15,11 +16,17 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2, vertical: 21),
-          child: CustomBookItem(imageUrl: 'https://media.istockphoto.com/id/2170879145/photo/close-up-of-man-writing-in-a-notebook-at-a-desk.jpg?s=2048x2048&w=is&k=20&c=M9BUhFRd1b2yNbW73t55vUr2usk1841Wk35HXA2DMZE=',),
+          child: CustomBookItem(
+            imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail!,
+          ),
         ),
-        Text('The Jungle Book', style: Styles.textStyle30),
         Text(
-          'Rudyard Kipling',
+          bookModel.volumeInfo.title!,
+          style: Styles.textStyle30,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          bookModel.volumeInfo.authors?[0] ?? '',
           style: Styles.textStyle18.copyWith(
               color: Colors.white.withOpacity(.7),
               fontStyle: FontStyle.italic,
@@ -27,8 +34,8 @@ class BookDetailsSection extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         BookRating(
-          pages: 22,
-          ratingNums: 2,
+          pages: bookModel.volumeInfo.pageCount!,
+          ratingNums: 4,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
       ],
