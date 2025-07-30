@@ -15,7 +15,6 @@ class CustomBookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-
         GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
@@ -23,7 +22,8 @@ class CustomBookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookItem(
-                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? 'https://media.istockphoto.com/id/2170879145/photo/close-up-of-man-writing-in-a-notebook-at-a-desk.jpg?s=2048x2048&w=is&k=20&c=M9BUhFRd1b2yNbW73t55vUr2usk1841Wk35HXA2DMZE='),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                    'https://media.istockphoto.com/id/2170879145/photo/close-up-of-man-writing-in-a-notebook-at-a-desk.jpg?s=2048x2048&w=is&k=20&c=M9BUhFRd1b2yNbW73t55vUr2usk1841Wk35HXA2DMZE='),
             SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -40,7 +40,9 @@ class CustomBookListViewItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors?[0] ?? '',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle14.copyWith(color: Colors.grey),
                   ),
                   Row(
@@ -53,7 +55,7 @@ class CustomBookListViewItem extends StatelessWidget {
                       ),
                       Spacer(),
                       BookRating(
-                        pages: bookModel.volumeInfo.pageCount!,
+                        pages: bookModel.volumeInfo.pageCount ?? 0,
                         ratingNums: 4,
                       ),
                     ],
