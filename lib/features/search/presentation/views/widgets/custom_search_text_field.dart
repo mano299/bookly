@@ -10,6 +10,7 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       onSubmitted: (value) {
         context.read<SearchBooksCubit>().fetchSearchedBooks(value.trim());
       },
