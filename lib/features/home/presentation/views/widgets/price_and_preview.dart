@@ -1,10 +1,12 @@
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'custom_button.dart';
 
 class PriceAndPreview extends StatelessWidget {
-  const PriceAndPreview({super.key});
-
+  const PriceAndPreview({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +25,13 @@ class PriceAndPreview extends StatelessWidget {
         ),
         Expanded(
           child: CustomButton(
-            text: 'Free Preview',
+            onPressed: () async {
+              Uri url = Uri.parse(bookModel.volumeInfo.previewLink!);
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url);
+              }
+            },
+            text: 'Preview',
             backgroundColor: Color(0xffEF8262),
             fontWeight: FontWeight.w700,
             textColor: Colors.white,
