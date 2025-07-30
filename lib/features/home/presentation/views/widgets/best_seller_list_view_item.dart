@@ -40,7 +40,7 @@ class CustomBookListViewItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    bookModel.volumeInfo.authors?[0] ?? '',
+                    bookModel.volumeInfo.authors?[0] ?? 'No Finded Authors',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle14.copyWith(color: Colors.grey),
